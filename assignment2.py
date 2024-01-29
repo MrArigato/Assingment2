@@ -1,22 +1,27 @@
 class Assignment2:
     def __init__(self, year):
         self.year = year
+
     def tellAge(self, currentYear):
         age = currentYear - self.year
         print(f"Your age is {age}")
+
     def listAnniversaries(self):
         currentYear = 2022
         return [i for i in range(10, (currentYear - self.year) + 1, 10)]
+
     def modifyYear(self, n):
         year_str = str(self.year)
         first_two = year_str[:2] * n
-        odd_chars = year_str[::2] * n
-        return first_two + odd_chars
+        odd_chars = ''.join([year_str[i] for i in range(0, len(year_str), 2)])
+        return first_two + odd_chars * n
+
     @staticmethod
     def checkGoodString(string):
         if len(string) >= 9 and string[0].islower() and sum(c.isdigit() for c in string) == 1:
             return True
         return False
+
     @staticmethod
     def connectTcp(host, port):
         import socket
