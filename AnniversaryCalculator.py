@@ -1,4 +1,4 @@
-class Assignment2:
+class AnniversaryCalculator:
     def __init__(self, year):
         self.year = year
     def tellAge(self, currentYear):
